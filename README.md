@@ -32,15 +32,18 @@ Things you may want to cover:
 ### Association
 - has_many :messages
 - has_many :groups
-- has_many :group_user
+- has_many :group_users
+- has_many  :groups,  through:  :group_users
 
 ## groupテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|text|null: false|
+|name|string|null: false|
 ### Association
-- has_many :user
-- has_many :group_user
+- has_many :users
+- has_many :messages
+- has_many :group_users
+- has_many  :users,  through:  :group_users
 
 ## group_userテーブル
 |Column|Type|Options|
@@ -51,7 +54,7 @@ Things you may want to cover:
 - belongs_to :user
 - belongs_to :group
 
-## commentsテーブル
+## messageテーブル
 |Column|Type|Options|
 |------|----|-------|
 |text|text|
@@ -59,5 +62,4 @@ Things you may want to cover:
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :post
 - belongs_to :user
