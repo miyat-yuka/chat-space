@@ -1,0 +1,30 @@
+.ChatMain__Top
+  .ChatMain__Top__Left
+    グループ
+    .ChatMain__Top__Left__member
+      member: yuka
+  = link_to "#", class: 'ChatMain__Top__Edit' do
+    Edit
+
+.ChatMains
+  .ChatMain
+    .ChatMain__Child
+      .ChatMain__Child__Name
+        name
+      .ChatMain__Child__Date
+        2019/12/05(Thu)17:00:00
+    .ChatMain__message
+      おはよう
+
+  .ChatMain__Under
+    .TextForm__Main
+      .TextForm__Main__Box
+        .TextForm__Main__Box__Message
+          %input{type: "text",placeholder: " type a message",name: "message[content]",class: "TextForm__Main__Box__Message__1"}
+
+        .TextForm__Main__Box__Icon
+          %label{class: "input-box__image"}
+            = icon('fas', 'image')
+            %input{type: "file",size: "15",class: "input-box__image__child"}
+      .TextForm__Main__Button
+        %input{type: "submit",value: "Send",class: "TextForm__Main__Button__Design"}
