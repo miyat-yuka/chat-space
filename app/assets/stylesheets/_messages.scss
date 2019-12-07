@@ -1,0 +1,246 @@
+$white: #ffffff;
+$light_brue: #38aef0;
+
+* {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.SideBer {
+  background-color: #2f3e51;
+  height: 100%;
+  width: 300px;
+  float: left;
+  clear: both;
+
+  &__UserName {
+    background-color: #253141;
+    color: $white;
+    height: 100px;
+    width: 300px;
+    position: relative;
+
+    .TopItems__Name {
+      height: 20px;
+      width: 260px;
+      position: absolute;
+      top: 40px;
+      right: 20px;
+      display: flex;
+      justify-content: space-between;
+
+      .TopItems__Icons__pen {
+        height: 20px;
+        width: 15px;
+        position: absolute;
+        right: 20px;
+        bottom: 0;
+        line-height: 20px;
+        a {
+          color: $white;
+        }
+      }
+
+      .TopItems__Icons__Haguruma {
+        height: 20px;
+        width: 15px;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        line-height: 20px;
+        a {
+          color: $white;
+        }
+      }
+    }
+
+
+    .SideBer__GroupList {
+       color: $white;
+       height: 91px;
+       width: 300px;
+       position: absolute;
+       top: 100px;
+
+      &__firest {
+         height: 15px;
+         width: 260px;
+         position: absolute;
+         top: 20px;
+         right: 20px;
+         font-size: 25px;
+         line-height: 15px;
+      }
+
+      &__second {
+         height: 11px;
+         width: 260px;
+         position: absolute;
+         top: 20px;
+         right: 0px;
+         font-size: 11px;
+         line-height: 11px;
+         margin-top: 5px;
+         padding-top: 10px;
+      }
+    }
+  }
+}
+
+
+
+
+
+.ChatMain__Top {
+  height: 100px;
+  width : calc(100vw - 300px) ;
+  border-bottom: solid 1px #eeeeee;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+    
+  &__Left {
+    height: 20px;
+    width: 100px;
+    font-size: 20px;
+    margin-top: 35px;
+
+    &__member {
+      width: 100px;
+      height: 12px;
+      font-size: 12px;
+      margin-top: 15px;
+      color: #999999;
+    }
+  }
+
+  &__Edit {
+    color: $light_brue;
+    height: 40px;
+    width: 68px;
+    line-height: 40px;
+    padding: 0 20px;
+    margin-top: 30px;
+    border: solid;
+    border-width: thin;
+    text-decoration: none;
+  }
+}
+
+.ChatMains {
+  height: calc(100% - 100px) ;
+  width : calc(100% - 300px) ;
+  background-color: #fafafa;
+  float: left;
+  padding-bottom: 40px;
+  
+  .ChatMain {
+    height: 39px;
+    width: 27px;
+    padding: 35px 40px;
+
+    &__Child {
+      height: 18px;
+      width: 27px;
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 12px;
+  
+      &__Name {
+        color: #333333;
+        font-size: 16px;
+        height: 18px;
+        width: 27px;
+        line-height: 18px;
+        margin-right: 15px;
+      }
+    
+      &__Date {
+        color: #999999;
+        font-size: 12px;
+        height: 18px;
+        width: 27px;
+        line-height: 18px;
+      }
+    }
+
+    &__message {
+      color: #434A54;
+      font-size: 12px;
+      height: 21px;
+      width: 100px;
+      margin-bottom: 46px;
+    }
+  }
+}
+
+
+
+
+
+.ChatMain__Under {
+  background-color: #ddd;
+  height: 90px;
+  width : calc(100% - 300px) ;
+  position: fixed;
+  bottom: 0;
+
+  .TextForm__Main {
+    width: 100%;
+    height: 50px;
+    margin-top: 20px;
+    display: flex;
+    padding: 0 50px;
+
+    &__Box {
+      height: 50px;
+      width: 950px;
+      display: flex;
+      justify-content: space-between;
+
+      &__Message {
+        background-color: $white;
+        height: 50px;
+        width: 950px;
+      }
+
+      &__Icon {
+        height: 50px;
+        width: 60px;
+        position: absolute;
+        right: 130px;
+        margin-top: 15px;
+
+        .input-box__image {
+          height: 15px;
+          width: 15px;
+          cursor: pointer;
+          position: absolute;
+        }
+
+        .input-box__image__child {
+          display: none;
+        }
+      }
+    }
+
+    &__Button {
+      background-color: $light_brue;
+      height: 50px;
+      width: 80px;
+      position: absolute;
+      right: 40px;
+
+      &__Design {
+        background-color: $light_brue;
+        color: $white;
+        cursor: pointer;
+        height: 50px;
+        width: 80px;
+      }
+    }
+  }
+}
