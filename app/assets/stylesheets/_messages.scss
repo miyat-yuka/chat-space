@@ -3,15 +3,13 @@ $light_brue: #38aef0;
 
 * {
   box-sizing: border-box;
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
 }
+
+
 
 .SideBer {
   background-color: #2f3e51;
-  height: 100%;
+  height: 790px;
   width: 300px;
   float: left;
   clear: both;
@@ -56,40 +54,41 @@ $light_brue: #38aef0;
         }
       }
     }
+  }
 
 
-    .SideBer__GroupList {
-       color: $white;
-       height: 91px;
-       width: 300px;
-       position: absolute;
-       top: 100px;
+  .SideBer__GroupList {
+    color: $white;
+    height: calc(100% - 100px);
+    width: 300px;
+    position: absolute;
+    top: 100px;
+    // float: left;
+    z-index: 1;
 
-      &__firest {
-         height: 15px;
-         width: 260px;
-         position: absolute;
-         top: 20px;
-         right: 20px;
-         font-size: 25px;
-         line-height: 15px;
-      }
+    &__firest {
+      height: 15px;
+      width: 260px;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 25px;
+      line-height: 15px;
+    }
 
-      &__second {
-         height: 11px;
-         width: 260px;
-         position: absolute;
-         top: 20px;
-         right: 0px;
-         font-size: 11px;
-         line-height: 11px;
-         margin-top: 5px;
-         padding-top: 10px;
-      }
+    &__second {
+      height: 11px;
+      width: 260px;
+      position: absolute;
+      top: 20px;
+      right: 0px;
+      font-size: 11px;
+      line-height: 11px;
+      margin-top: 5px;
+      padding-top: 10px;
     }
   }
 }
-
 
 
 
@@ -136,6 +135,8 @@ $light_brue: #38aef0;
   background-color: #fafafa;
   float: left;
   padding-bottom: 40px;
+  position: absolute;
+  right: 0;
   
   .ChatMain {
     height: 39px;
@@ -179,8 +180,6 @@ $light_brue: #38aef0;
 
 
 
-
-
 .ChatMain__Under {
   background-color: #ddd;
   height: 90px;
@@ -205,6 +204,11 @@ $light_brue: #38aef0;
         background-color: $white;
         height: 50px;
         width: 950px;
+
+        .TextForm__Main__Box__Message__1  {
+          width: 100%;
+          height: 100%;
+       }
       }
 
       &__Icon {

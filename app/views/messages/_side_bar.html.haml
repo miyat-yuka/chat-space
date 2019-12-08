@@ -1,16 +1,17 @@
+
 .SideBer
   .SideBer__UserName
     .TopItems__Name
-      name
+      = current_user.name
       .TopItems__Icons__pen
         = link_to "#", class: "contents__btn" do
           = icon('fas', 'edit')
       .TopItems__Icons__Haguruma
-        = link_to "#", class: '.TopItems__Icons__firest' do
-          = icon('fas', 'cog')
+        = link_to edit_user_path(current_user) do
+          = icon('fas', 'cog', class: '.TopItems__Icons__firest')
 
-    .SideBer__GroupList
-      .SideBer__GroupList__firest
-        test
-        .SideBer__GroupList__second
-          まだ新着メッセージはありません
+  .SideBer__GroupList
+    .SideBer__GroupList__firest
+      test
+      .SideBer__GroupList__second
+        まだ新着メッセージはありません
