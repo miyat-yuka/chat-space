@@ -4,14 +4,17 @@
     .TopItems__Name
       = current_user.name
       .TopItems__Icons__pen
-        = link_to "#", class: "contents__btn" do
+        -# = link_to "#", class: "contents__btn" do
+        = link_to new_group_path do
           = icon('fas', 'edit')
       .TopItems__Icons__Haguruma
         = link_to edit_user_path(current_user) do
           = icon('fas', 'cog', class: '.TopItems__Icons__firest')
 
   .SideBer__GroupList
-    .SideBer__GroupList__firest
-      test
+    - current_user.groups.each do |group|
+      .SideBer__GroupList__firest
+        = link_to group_messages_path(group) do
+          = group.name
       .SideBer__GroupList__second
         まだ新着メッセージはありません

@@ -74,18 +74,23 @@ $light_brue: #38aef0;
       right: 20px;
       font-size: 25px;
       line-height: 15px;
+      a {
+        text-decoration: none;
+        color: $white;
+      }
     }
 
     &__second {
       height: 11px;
       width: 260px;
-      position: absolute;
-      top: 20px;
-      right: 0px;
+      // position: absolute;
+      // top: 20px;
+      // right: 0px;
       font-size: 11px;
       line-height: 11px;
-      margin-top: 5px;
+      margin-top: 50px;
       padding-top: 10px;
+      margin-left: 20px;
     }
   }
 }
