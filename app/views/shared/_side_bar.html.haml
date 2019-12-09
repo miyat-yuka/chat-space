@@ -12,7 +12,9 @@
           = icon('fas', 'cog', class: '.TopItems__Icons__firest')
 
   .SideBer__GroupList
-    .SideBer__GroupList__firest
-      test
+    - current_user.groups.each do |group|
+      .SideBer__GroupList__firest
+        = link_to group_messages_path(group) do
+          = group.name
       .SideBer__GroupList__second
         まだ新着メッセージはありません
