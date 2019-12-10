@@ -4,7 +4,6 @@
     .TopItems__Name
       = current_user.name
       .TopItems__Icons__pen
-        -# = link_to "#", class: "contents__btn" do
         = link_to new_group_path do
           = icon('fas', 'edit')
       .TopItems__Icons__Haguruma
@@ -17,4 +16,4 @@
         = link_to group_messages_path(group) do
           = group.name
       .SideBer__GroupList__second
-        まだ新着メッセージはありません
+        = group.show_last_message
