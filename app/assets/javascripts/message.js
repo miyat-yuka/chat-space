@@ -53,14 +53,14 @@ $(function(){
     .done(function (message){
       var html = buildHTML(message);
       $('.ChatMain').append(html);
-      $('#message_content').val('');
-      $('.TextForm__Main__Button__Design').prop('disabled', false);
+      $('form')[0].reset();
       $('.ChatMain').animate({ scrollTop: $('.ChatMain')[0].scrollHeight});
     })
-
     .fail(function() {
       alert("メッセージ送信に失敗しました");
-    });
-    return false;
+    })
+    .always(function(message){
+      $('.TextForm__Main__Button__Design').prop('disabled', false);
+    })
   })
 });
