@@ -133,6 +133,7 @@ $light_brue: #38aef0;
   }
 }
 
+
 .ChatMains {
   height: calc(100% - 100px) ;
   width : calc(100% - 300px) ;
@@ -142,19 +143,13 @@ $light_brue: #38aef0;
   right: 0;
   bottom: 0;
   overflow: scroll;
-  // margin-right: 0;
-  // padding-bottom: 40px;
-  // position: absolute;
-  // right: 0;
-
-
   
   .ChatMain {
-    // height: 39px;
-    height: 500px;
+    height: 600px;
     width: 100%;
     padding: 35px 40px;
     margin-bottom: 46px;
+    overflow: scroll;
 
     .lower-message {
       margin-bottom: 50px;
@@ -190,8 +185,6 @@ $light_brue: #38aef0;
       font-size: 12px;
       height: 21px;
       width: 100px;
-      // margin-bottom: 50px;
-      // padding-bottom: 150px;
     }
   }
 }
