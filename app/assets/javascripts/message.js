@@ -2,7 +2,7 @@ $(function(){
 
   function buildHTML(message){
     if (message.image) {
-      var html = `<div class="message">
+      var html = `<div class="message" data-message-id=${message.id}>
                     <div class="upper-message">
                       <div class="upper-message__user-name">
                       ${message.user_name}
@@ -16,10 +16,11 @@ $(function(){
                   ${message.content}
                   </p>
                 </div>
-                ${message.image}
+                <img src=${message.image}>
                 </div>`
+      return html;
     } else {
-      var html = `<div class="message">
+      var html = `<div class="message" data-message-id=${message.id}>
                     <div class="upper-message">
                       <div class="upper-message__user-name">
                       ${message.user_name}
@@ -36,8 +37,9 @@ $(function(){
                 </div>
                 </div>`
     }
-    return html
-  }
+    return html;
+  };
+
   $('#new_message').on('submit', function(e){
     e.preventDefault()
     var formData = new FormData(this);
@@ -53,14 +55,33 @@ $(function(){
     .done(function (message){
       var html = buildHTML(message);
       $('.ChatMain').append(html);
-      $('form')[0].reset();
       $('.ChatMain').animate({ scrollTop: $('.ChatMain')[0].scrollHeight});
+      $('form')[0].reset();
     })
     .fail(function() {
       alert("メッセージ送信に失敗しました");
     })
     .always(function(message){
       $('.TextForm__Main__Button__Design').prop('disabled', false);
+    });
+  });
+
+  var reloadMessages = function() {
+    last_message_id = $('.message:last').data("message-id");
+    $.ajax({
+      url: 'api/messages#index {:format=>"json"}',
+      type: 'get',
+      dataType: 'json',
+      data: {id: last_message_id}
     })
-  })
+    .done(function(messages) {
+      var insertHTML = '';
+      $.each(messages, function(i, message) {
+        insertHTML += buildHTML(message)
+      });
+        $('.ChatMain').append(insertHTML);
+        $('.ChatMain').animate({ scrollTop: $('.ChatMain')[0].scrollHeight});
+    })
+  }
+  setInterval(reloadMessages, 2000);
 });
