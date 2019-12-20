@@ -80,8 +80,8 @@ $(function(){
         insertHTML += buildHTML(message)
       });
         $('.ChatMain').append(insertHTML);
-        $('.ChatMain').animate({ scrollTop: $('.ChatMain')[0].scrollHeight});
     })
   }
+  $('.ChatMain').animate({ scrollTop: $('.ChatMain')[0].scrollHeight});
   setInterval(reloadMessages, 2000);
 });
