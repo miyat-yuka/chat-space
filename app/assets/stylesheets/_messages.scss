@@ -208,7 +208,7 @@ $light_brue: #38aef0;
 
     &__Box {
       height: 50px;
-      width: 950px;
+      width: 100%;
       display: flex;
       justify-content: space-between;
       
@@ -216,7 +216,8 @@ $light_brue: #38aef0;
       &__Message {
         background-color: $white;
         height: 50px;
-        width: 950px;
+        width: 100%;
+        margin-right: 80px;
 
         .TextForm__Main__Box__Message__1  {
           width: 100%;
@@ -250,6 +251,7 @@ $light_brue: #38aef0;
         position: absolute;
         right: 30px;
         bottom: 0px;
+
 
         &__Design {
           background-color: $light_brue;
