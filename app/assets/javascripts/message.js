@@ -66,6 +66,10 @@ $(function(){
     });
   });
 
+  function scroll() {
+    $('.ChatMain').animate({ scrollTop: $('.ChatMain')[0].scrollHeight});
+  }
+
   var reloadMessages = function() {
     last_message_id = $('.message:last').data("message-id");
     $.ajax({
@@ -82,6 +86,5 @@ $(function(){
         $('.ChatMain').append(insertHTML);
     })
   }
-  $('.ChatMain').animate({ scrollTop: $('.ChatMain')[0].scrollHeight});
   setInterval(reloadMessages, 2000);
 });
